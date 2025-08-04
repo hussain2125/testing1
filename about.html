@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Website</title>
+    <title>About Us - ProSite</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -122,49 +122,71 @@
             width: 100%;
         }
         
-        /* Hero Section */
-        .hero {
+        /* Page Header */
+        .page-header {
             background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
             color: white;
-            padding: 120px 0 80px;
+            padding: 120px 0 60px;
             text-align: center;
         }
         
-        .hero h1 {
+        .page-header h1 {
             font-family: 'Montserrat', sans-serif;
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 20px;
         }
         
-        .hero p {
+        .page-header p {
             font-size: 1.2rem;
             max-width: 700px;
-            margin: 0 auto 30px;
+            margin: 0 auto;
             opacity: 0.9;
         }
         
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
+        /* About Content */
+        .about-section {
+            padding: 80px 0;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-image {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .about-image-placeholder {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .about-text h2 {
             font-family: 'Montserrat', sans-serif;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
         }
         
-        .cta-button:hover {
-            background-color: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        .about-text p {
+            margin-bottom: 20px;
         }
         
-        /* Features Section */
-        .features {
+        /* Team Section */
+        .team-section {
             padding: 80px 0;
             background-color: var(--light-gray);
         }
@@ -178,39 +200,78 @@
             color: var(--primary-color);
         }
         
-        .features-grid {
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .member-image {
+            height: 250px;
+            background-color: var(--medium-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-gray);
+        }
+        
+        .member-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .member-info h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .member-info p.position {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        /* Values Section */
+        .values-section {
+            padding: 80px 0;
+        }
+        
+        .values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
         
-        .feature-card {
+        .value-card {
             background-color: white;
             border-radius: 8px;
             padding: 30px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--secondary-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        .feature-card:hover {
+        .value-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
         
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background-color: var(--secondary-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            color: white;
-            font-size: 1.5rem;
-        }
-        
-        .feature-card h3 {
+        .value-card h3 {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.3rem;
             margin-bottom: 15px;
@@ -295,11 +356,20 @@
                 margin: 0 10px;
             }
             
-            .hero {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+                height: 300px;
+            }
+            
+            .page-header {
                 padding: 150px 0 60px;
             }
             
-            .hero h1 {
+            .page-header h1 {
                 font-size: 2rem;
             }
             
@@ -320,7 +390,7 @@
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="about.html" class="active">About</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </nav>
@@ -328,32 +398,85 @@
         </div>
     </header>
     
-    <section class="hero">
+    <section class="page-header">
         <div class="container">
-            <h1>Welcome to Our Professional Website</h1>
-            <p>We provide high-quality solutions tailored to your specific needs. Discover how we can help your business grow and succeed in today's competitive market.</p>
-            <a href="#" class="cta-button">Get Started</a>
+            <h1>About Us</h1>
+            <p>Learn more about our company, our mission, and the team behind our success.</p>
         </div>
     </section>
     
-    <section class="features">
+    <section class="about-section">
         <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">1</div>
-                    <h3>Quality Service</h3>
-                    <p>We pride ourselves on delivering exceptional quality in everything we do, ensuring your complete satisfaction.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2010, ProSite has been at the forefront of innovation and excellence in the industry. What started as a small team with big dreams has grown into a leading company with a global presence.</p>
+                    <p>Our journey has been defined by a commitment to quality, a passion for innovation, and a dedication to exceeding client expectations. Through the years, we've evolved and adapted to changing markets while staying true to our core values.</p>
+                    <p>Today, we continue to push boundaries and set new standards in our field, driven by the same entrepreneurial spirit that inspired our founding.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">2</div>
-                    <h3>Expert Team</h3>
-                    <p>Our team of professionals brings years of experience and expertise to help solve your most complex challenges.</p>
+                <div class="about-image">
+                    <div class="about-image-placeholder">
+                        <p>Company Image</p>
+                        <p>(Add your company image here)</p>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">3</div>
-                    <h3>Innovative Solutions</h3>
-                    <p>We stay at the forefront of industry trends to provide you with cutting-edge solutions that drive results.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-title">Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Excellence</h3>
+                    <p>We are committed to delivering excellence in everything we do. From the quality of our products to the service we provide, we strive for the highest standards.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Integrity</h3>
+                    <p>We conduct our business with honesty, transparency, and ethical practices. We believe in building trust through integrity in all our relationships.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Innovation</h3>
+                    <p>We embrace creativity and forward-thinking approaches. We continuously seek new ideas and solutions to stay ahead in a rapidly evolving landscape.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <p>Team Member Photo</p>
+                    </div>
+                    <div class="member-info">
+                        <h3>John Doe</h3>
+                        <p class="position">CEO & Founder</p>
+                        <p>With over 15 years of industry experience, John leads our company with vision and expertise.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <p>Team Member Photo</p>
+                    </div>
+                    <div class="member-info">
+                        <h3>Jane Smith</h3>
+                        <p class="position">Creative Director</p>
+                        <p>Jane brings creative excellence and innovative thinking to every project we undertake.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <p>Team Member Photo</p>
+                    </div>
+                    <div class="member-info">
+                        <h3>Michael Johnson</h3>
+                        <p class="position">Technical Lead</p>
+                        <p>Michael's technical expertise ensures we deliver cutting-edge solutions to our clients.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -365,7 +488,7 @@
                 <div class="footer-column">
                     <h3>Company</h3>
                     <ul>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="#">Our Team</a></li>
                         <li><a href="#">Careers</a></li>
                     </ul>
